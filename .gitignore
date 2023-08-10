@@ -1,0 +1,17 @@
+# Ignore build files and directories
+build
+node_modules
+
+# Ignore log & system files
+*.log
+.DS_Store
+
+# Ignore backup files
+*.bak
+
+# Ignore database files
+*.sql
+
+# Ignore temporary files
+*.tmp
+*.swp

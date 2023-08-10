@@ -1,0 +1,789 @@
+{
+  "key": "group_61f180ebc7b9d",
+  "title": "PETA Multistep",
+  "fields": [
+    {
+      "key": "field_63694582ec123",
+      "label": "Multistep Type",
+      "name": "peta_promotion_type",
+      "aria-label": "",
+      "type": "button_group",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "100",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "multistep_lightbox": "EN Multistep Lightbox",
+        "multistep_embed": "EN Multistep Embed"
+      },
+      "default_value": "",
+      "return_format": "value",
+      "allow_null": 0,
+      "layout": "horizontal"
+    },
+    {
+      "key": "field_630676e57b123",
+      "label": "Multistep Status",
+      "name": "peta_multistep_display",
+      "aria-label": "",
+      "type": "button_group",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "100",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "turned-on": "Enabled",
+        "turned-off": "Disabled"
+      },
+      "default_value": "",
+      "return_format": "value",
+      "allow_null": 0,
+      "layout": "horizontal"
+    },
+    {
+      "key": "field_6445bdb9e4123",
+      "label": "Content Position",
+      "name": "peta_content_position",
+      "aria-label": "",
+      "type": "button_group",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "50",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "left": "Left",
+        "right": "Right",
+        "hidden": "Hidden"
+      },
+      "default_value": "left",
+      "return_format": "value",
+      "allow_null": 0,
+      "layout": "horizontal"
+    },
+    {
+      "key": "field_6445d7ea53123",
+      "label": "Max Width",
+      "name": "max_width",
+      "aria-label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": [
+        [
+          {
+            "field": "field_6445bdb9e4123",
+            "operator": "==",
+            "value": "hidden"
+          }
+        ]
+      ],
+      "wrapper": {
+        "width": "50",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_61f180fb94123",
+      "label": "Engaging Networks Page",
+      "name": "peta_donation_page",
+      "aria-label": "",
+      "type": "url",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "placeholder": ""
+    },
+    {
+      "key": "field_61f1829913123",
+      "label": "Title",
+      "name": "peta_title",
+      "aria-label": "",
+      "type": "text",
+      "instructions": "Title of the Multistep",
+      "required": 0,
+      "conditional_logic": [
+        [
+          {
+            "field": "field_6445bdb9e4123",
+            "operator": "!=",
+            "value": "hidden"
+          }
+        ]
+      ],
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_61f182a213123",
+      "label": "Paragraph",
+      "name": "peta_paragraph",
+      "aria-label": "",
+      "type": "textarea",
+      "instructions": "Content of the Multistep",
+      "required": 0,
+      "conditional_logic": [
+        [
+          {
+            "field": "field_6445bdb9e4123",
+            "operator": "!=",
+            "value": "hidden"
+          }
+        ]
+      ],
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "rows": 4,
+      "placeholder": "",
+      "new_lines": "br"
+    },
+    {
+      "key": "field_6243ac1740123",
+      "label": "Hero Type",
+      "name": "peta_hero_type",
+      "aria-label": "",
+      "type": "radio",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": [
+        [
+          {
+            "field": "field_6445bdb9e4123",
+            "operator": "!=",
+            "value": "hidden"
+          }
+        ]
+      ],
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "choices": {
+        "image": "Image",
+        "autoplay-video": "Auto play Video",
+        "click-to-play-video": "Click to Play Video"
+      },
+      "default_value": "image",
+      "return_format": "value",
+      "allow_null": 0,
+      "other_choice": 0,
+      "layout": "vertical",
+      "save_other_choice": 0
+    },
+    {
+      "key": "field_61f181cf13123",
+      "label": "Image",
+      "name": "peta_image",
+      "aria-label": "",
+      "type": "image",
+      "instructions": "Main Image of the Multistep",
+      "required": 0,
+      "conditional_logic": [
+        [
+          {
+            "field": "field_6445bdb9e4123",
+            "operator": "!=",
+            "value": "hidden"
+          },
+          {
+            "field": "field_6243ac1740123",
+            "operator": "==",
+            "value": "image"
+          }
+        ]
+      ],
+      "wrapper": {
+        "width": "50",
+        "class": "",
+        "id": ""
+      },
+      "return_format": "url",
+      "library": "all",
+      "min_width": "",
+      "min_height": "",
+      "min_size": "",
+      "max_width": "",
+      "max_height": "",
+      "max_size": "",
+      "mime_types": "",
+      "preview_size": "medium"
+    },
+    {
+      "key": "field_6243ab0040123",
+      "label": "Video",
+      "name": "peta_video",
+      "aria-label": "",
+      "type": "file",
+      "instructions": "Main Video of the Multistep",
+      "required": 0,
+      "conditional_logic": [
+        [
+          {
+            "field": "field_6243ac1740123",
+            "operator": "==",
+            "value": "autoplay-video"
+          },
+          {
+            "field": "field_6445bdb9e4123",
+            "operator": "!=",
+            "value": "hidden"
+          }
+        ],
+        [
+          {
+            "field": "field_6243ac1740123",
+            "operator": "==",
+            "value": "click-to-play-video"
+          },
+          {
+            "field": "field_6445bdb9e4123",
+            "operator": "!=",
+            "value": "hidden"
+          }
+        ]
+      ],
+      "wrapper": {
+        "width": "50",
+        "class": "",
+        "id": ""
+      },
+      "return_format": "url",
+      "library": "all",
+      "min_size": "",
+      "max_size": "",
+      "mime_types": "mp4"
+    },
+    {
+      "key": "field_6243b14305123",
+      "label": "Divider",
+      "name": "peta_divider",
+      "aria-label": "",
+      "type": "image",
+      "instructions": "SVG Image Used Between the Hero and the Content Area",
+      "required": 0,
+      "conditional_logic": [
+        [
+          {
+            "field": "field_6445bdb9e4123",
+            "operator": "!=",
+            "value": "hidden"
+          }
+        ]
+      ],
+      "wrapper": {
+        "width": "100",
+        "class": "",
+        "id": ""
+      },
+      "return_format": "url",
+      "library": "all",
+      "min_width": "",
+      "min_height": "",
+      "min_size": "",
+      "max_width": "",
+      "max_height": "",
+      "max_size": "",
+      "mime_types": "svg",
+      "preview_size": "medium"
+    },
+    {
+      "key": "field_624ca8da9a123",
+      "label": "Use Logo",
+      "name": "peta_use_logo",
+      "aria-label": "",
+      "type": "true_false",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": [
+        [
+          {
+            "field": "field_63694582ec123",
+            "operator": "==",
+            "value": "multistep_lightbox"
+          }
+        ]
+      ],
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "message": "",
+      "default_value": 1,
+      "ui_on_text": "Yes",
+      "ui_off_text": "No",
+      "ui": 1
+    },
+    {
+      "key": "field_6243ad93bd123",
+      "label": "Logo Position",
+      "name": "peta_logo_position",
+      "aria-label": "",
+      "type": "group",
+      "instructions": "The video will be muted and auto-play with an infinite loop if true.",
+      "required": 0,
+      "conditional_logic": [
+        [
+          {
+            "field": "field_624ca8da9a123",
+            "operator": "==",
+            "value": "1"
+          }
+        ]
+      ],
+      "wrapper": {
+        "width": "50",
+        "class": "",
+        "id": ""
+      },
+      "layout": "block",
+      "acfe_seamless_style": 0,
+      "acfe_group_modal": 0,
+      "acfe_group_modal_close": 0,
+      "acfe_group_modal_button": "",
+      "acfe_group_modal_size": "large",
+      "sub_fields": [
+        {
+          "key": "field_643044cbfe123",
+          "label": "Position Options",
+          "name": "position_options",
+          "aria-label": "",
+          "type": "checkbox",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "choices": {
+            "left": "left",
+            "right": "right",
+            "top": "top",
+            "bottom": "bottom"
+          },
+          "default_value": ["left", "top"],
+          "return_format": "value",
+          "allow_custom": 0,
+          "layout": "horizontal",
+          "toggle": 0,
+          "save_custom": 0,
+          "custom_choice_button_text": "Add new choice"
+        },
+        {
+          "key": "field_6243ade2bd123",
+          "label": "Top",
+          "name": "top",
+          "aria-label": "",
+          "type": "number",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": [
+            [
+              {
+                "field": "field_643044cbfe123",
+                "operator": "==",
+                "value": "top"
+              }
+            ]
+          ],
+          "wrapper": {
+            "width": "50",
+            "class": "",
+            "id": ""
+          },
+          "default_value": 25,
+          "min": "",
+          "max": "",
+          "placeholder": "",
+          "step": "",
+          "prepend": "",
+          "append": "px"
+        },
+        {
+          "key": "field_6243ae45bd123",
+          "label": "Bottom",
+          "name": "bottom",
+          "aria-label": "",
+          "type": "number",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": [
+            [
+              {
+                "field": "field_643044cbfe123",
+                "operator": "==",
+                "value": "bottom"
+              }
+            ]
+          ],
+          "wrapper": {
+            "width": "50",
+            "class": "",
+            "id": ""
+          },
+          "default_value": 0,
+          "min": "",
+          "max": "",
+          "placeholder": "",
+          "step": "",
+          "prepend": "",
+          "append": "px"
+        },
+        {
+          "key": "field_6243b0ee68123",
+          "label": "Left",
+          "name": "left",
+          "aria-label": "",
+          "type": "number",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": [
+            [
+              {
+                "field": "field_643044cbfe123",
+                "operator": "==",
+                "value": "left"
+              }
+            ]
+          ],
+          "wrapper": {
+            "width": "50",
+            "class": "",
+            "id": ""
+          },
+          "default_value": 25,
+          "min": "",
+          "max": "",
+          "placeholder": "",
+          "step": "",
+          "prepend": "",
+          "append": "px"
+        },
+        {
+          "key": "field_6243b0fd68123",
+          "label": "Right",
+          "name": "right",
+          "aria-label": "",
+          "type": "number",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": [
+            [
+              {
+                "field": "field_643044cbfe123",
+                "operator": "==",
+                "value": "right"
+              }
+            ]
+          ],
+          "wrapper": {
+            "width": "50",
+            "class": "",
+            "id": ""
+          },
+          "default_value": 0,
+          "min": "",
+          "max": "",
+          "placeholder": "",
+          "step": "",
+          "prepend": "",
+          "append": "px"
+        }
+      ]
+    },
+    {
+      "key": "field_61f1822313123",
+      "label": "Logo",
+      "name": "peta_logo",
+      "aria-label": "",
+      "type": "image",
+      "instructions": "Logo Image Used on the center of the Multistep",
+      "required": 0,
+      "conditional_logic": [
+        [
+          {
+            "field": "field_624ca8da9a123",
+            "operator": "==",
+            "value": "1"
+          },
+          {
+            "field": "field_6445bdb9e4123",
+            "operator": "!=",
+            "value": "hidden"
+          }
+        ]
+      ],
+      "wrapper": {
+        "width": "50",
+        "class": "",
+        "id": ""
+      },
+      "return_format": "url",
+      "library": "all",
+      "min_width": "",
+      "min_height": "",
+      "min_size": "",
+      "max_width": "",
+      "max_height": "",
+      "max_size": "",
+      "mime_types": "",
+      "preview_size": "medium"
+    },
+    {
+      "key": "field_61f1833c13123",
+      "label": "Text Color",
+      "name": "peta_text_color",
+      "aria-label": "",
+      "type": "color_picker",
+      "instructions": "HEX color of the left column text.",
+      "required": 0,
+      "conditional_logic": [
+        [
+          {
+            "field": "field_6445bdb9e4123",
+            "operator": "!=",
+            "value": "hidden"
+          }
+        ]
+      ],
+      "wrapper": {
+        "width": "33",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "#FFFFFF",
+      "enable_opacity": 0,
+      "return_format": "string"
+    },
+    {
+      "key": "field_61f182b413123",
+      "label": "Background Color",
+      "name": "peta_bg_color",
+      "aria-label": "",
+      "type": "color_picker",
+      "instructions": "HEX color of the left column background.",
+      "required": 0,
+      "conditional_logic": [
+        [
+          {
+            "field": "field_6445bdb9e4123",
+            "operator": "!=",
+            "value": "hidden"
+          }
+        ]
+      ],
+      "wrapper": {
+        "width": "33",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "#000000",
+      "enable_opacity": 0,
+      "return_format": "string"
+    },
+    {
+      "key": "field_61f1835413123",
+      "label": "Form Theme Color",
+      "name": "peta_form_color",
+      "aria-label": "",
+      "type": "color_picker",
+      "instructions": "HEX color for the form theme.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "33",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "#000000",
+      "enable_opacity": 0,
+      "return_format": "string"
+    },
+    {
+      "key": "field_61f1837e13123",
+      "label": "Footer",
+      "name": "peta_footer",
+      "aria-label": "",
+      "type": "textarea",
+      "instructions": "Content of the footer.",
+      "required": 0,
+      "conditional_logic": [
+        [
+          {
+            "field": "field_6445bdb9e4123",
+            "operator": "!=",
+            "value": "hidden"
+          }
+        ]
+      ],
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "rows": 4,
+      "placeholder": "",
+      "new_lines": "br"
+    },
+    {
+      "key": "field_6243b2605a123",
+      "label": "Celebration Confetti Colors",
+      "name": "peta_confetti",
+      "aria-label": "",
+      "type": "repeater",
+      "instructions": "Colors for the celebration confetti. Remove all to disable the confetti.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "table",
+      "pagination": 0,
+      "min": 0,
+      "max": 0,
+      "collapsed": "",
+      "button_label": "Add Color",
+      "rows_per_page": 20,
+      "sub_fields": [
+        {
+          "key": "field_6243b2945a123",
+          "label": "Color",
+          "name": "color",
+          "aria-label": "",
+          "type": "color_picker",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "default_value": "",
+          "enable_opacity": 0,
+          "return_format": "string",
+          "parent_repeater": "field_6243b2605a123"
+        }
+      ]
+    },
+    {
+      "key": "field_61f1c83ea3123",
+      "label": "Cookie Name",
+      "name": "peta_cookie_name",
+      "aria-label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": [
+        [
+          {
+            "field": "field_63694582ec123",
+            "operator": "==",
+            "value": "multistep_lightbox"
+          }
+        ]
+      ],
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "HideDonationLightbox",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_61f1839713123",
+      "label": "Cookie Hours",
+      "name": "peta_cookie_hours",
+      "aria-label": "",
+      "type": "number",
+      "instructions": "Number of hours to not show the promotion after the user has seen it.",
+      "required": 0,
+      "conditional_logic": [
+        [
+          {
+            "field": "field_63694582ec123",
+            "operator": "==",
+            "value": "multistep_lightbox"
+          }
+        ]
+      ],
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": 24,
+      "min": "",
+      "max": "",
+      "placeholder": "",
+      "step": 1,
+      "prepend": "",
+      "append": ""
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "peta_multistep"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0
+}
