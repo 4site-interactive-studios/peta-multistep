@@ -672,9 +672,13 @@ body.has-PetaMultistep-lightbox {
   }
 }
 .foursitePetaMultistepEmbed {
+  max-width: 100% !important;
   .foursitePetaMultistepEmbed-container .dl-content .left {
     display: block;
-    width: 50%;
+    width: 100%;
+    @media (min-width: 768px) {
+      width: 50%;
+    }
   }
   .foursitePetaMultistepEmbed-container .dl-footer {
     max-height: 100%;
