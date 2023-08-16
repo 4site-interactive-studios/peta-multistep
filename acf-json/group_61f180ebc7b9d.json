@@ -73,34 +73,6 @@
       "layout": "horizontal"
     },
     {
-      "key": "field_6445d7ea53123",
-      "label": "Max Width",
-      "name": "max_width",
-      "aria-label": "",
-      "type": "text",
-      "instructions": "",
-      "required": 0,
-      "conditional_logic": [
-        [
-          {
-            "field": "field_6445bdb9e4123",
-            "operator": "==",
-            "value": "hidden"
-          }
-        ]
-      ],
-      "wrapper": {
-        "width": "50",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "maxlength": "",
-      "placeholder": "",
-      "prepend": "",
-      "append": ""
-    },
-    {
       "key": "field_61f180fb94123",
       "label": "Engaging Networks Page",
       "name": "peta_donation_page",
@@ -250,7 +222,7 @@
       "label": "Video",
       "name": "peta_video",
       "aria-label": "",
-      "type": "file",
+      "type": "url",
       "instructions": "Main Video of the Multistep",
       "required": 0,
       "conditional_logic": [
@@ -284,18 +256,15 @@
         "class": "",
         "id": ""
       },
-      "return_format": "url",
-      "library": "all",
-      "min_size": "",
-      "max_size": "",
-      "mime_types": "mp4"
+      "default_value": "",
+      "placeholder": ""
     },
     {
       "key": "field_6243b14305123",
       "label": "Divider",
       "name": "peta_divider",
       "aria-label": "",
-      "type": "image",
+      "type": "url",
       "instructions": "SVG Image Used Between the Hero and the Content Area",
       "required": 0,
       "conditional_logic": [
@@ -312,16 +281,8 @@
         "class": "",
         "id": ""
       },
-      "return_format": "url",
-      "library": "all",
-      "min_width": "",
-      "min_height": "",
-      "min_size": "",
-      "max_width": "",
-      "max_height": "",
-      "max_size": "",
-      "mime_types": "svg",
-      "preview_size": "medium"
+      "default_value": "",
+      "placeholder": ""
     },
     {
       "key": "field_624ca8da9a123",

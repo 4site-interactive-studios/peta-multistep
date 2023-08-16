@@ -20,6 +20,7 @@ export class PetaMultistep {
       content_position: "left",
       title: "",
       paragraph: "",
+      divider: "",
       mobile_enabled: true,
       mobile_title: "",
       mobile_paragraph: "",
@@ -70,6 +71,7 @@ export class PetaMultistep {
         );
       if ("title" in data) this.options[key].title = data.title;
       if ("paragraph" in data) this.options[key].paragraph = data.paragraph;
+      if ("divider" in data) this.options[key].divider = data.divider;
       if ("mobileEnabled" in data)
         this.options[key].mobile_enabled = data.mobileEnabled;
       if ("mobileTitle" in data)
@@ -281,47 +283,7 @@ export class PetaMultistep {
           this.close(e);
         }
       });
-      const videoElement = this.lightbox.querySelector("video");
-      if (videoElement) {
-        const playButton = this.lightbox.querySelector(".btn-play");
-        const pauseButton = this.lightbox.querySelector(".btn-pause");
-
-        if (playButton) {
-          playButton.addEventListener("click", () => {
-            videoElement.play();
-          });
-        }
-
-        if (pauseButton) {
-          pauseButton.addEventListener("click", () => {
-            videoElement.pause();
-          });
-        }
-
-        videoElement.addEventListener("play", (event) => {
-          this.lightbox.querySelector(".dl-container").classList.add("playing");
-          this.lightbox
-            .querySelector(".dl-container")
-            .classList.remove("paused");
-        });
-
-        videoElement.addEventListener("pause", (event) => {
-          this.lightbox
-            .querySelector(".dl-container")
-            .classList.remove("playing");
-          this.lightbox.querySelector(".dl-container").classList.add("paused");
-        });
-
-        videoElement.addEventListener("ended", (event) => {
-          this.lightbox
-            .querySelector(".dl-container")
-            .classList.remove("playing");
-          this.lightbox
-            .querySelector(".dl-container")
-            .classList.remove("paused");
-          videoElement.load();
-        });
-      }
+      this.addVideoEvents(key);
       document.body.appendChild(this.lightbox);
       this.open();
     } else {
@@ -330,9 +292,57 @@ export class PetaMultistep {
         `.peta-multistep-${this.options[key].id}`
       );
       if (container) {
+        this.addVideoEvents(key);
         container.parentNode.insertBefore(this.container[key], container);
       }
     }
+  }
+
+  addVideoEvents(key) {
+    const videoElement = this.container[key].querySelector("video");
+    if (!videoElement) return;
+    const playButton = this.container[key].querySelector(".btn-play");
+    const pauseButton = this.container[key].querySelector(".btn-pause");
+
+    if (playButton) {
+      playButton.addEventListener("click", () => {
+        videoElement.play();
+      });
+    }
+
+    if (pauseButton) {
+      pauseButton.addEventListener("click", () => {
+        videoElement.pause();
+      });
+    }
+
+    videoElement.addEventListener("play", (event) => {
+      this.container[key]
+        .querySelector(".dl-container")
+        .classList.add("playing");
+      this.container[key]
+        .querySelector(".dl-container")
+        .classList.remove("paused");
+    });
+
+    videoElement.addEventListener("pause", (event) => {
+      this.container[key]
+        .querySelector(".dl-container")
+        .classList.remove("playing");
+      this.container[key]
+        .querySelector(".dl-container")
+        .classList.add("paused");
+    });
+
+    videoElement.addEventListener("ended", (event) => {
+      this.container[key]
+        .querySelector(".dl-container")
+        .classList.remove("playing");
+      this.container[key]
+        .querySelector(".dl-container")
+        .classList.remove("paused");
+      videoElement.load();
+    });
   }
 
   open() {
@@ -416,6 +426,16 @@ export class PetaMultistep {
   status(status, key) {
     console.log("PetaMultistep: status: ", status, key);
     switch (status) {
+      case "footer":
+        const action = window.petaGA_GenericAction_Clicked ?? "Clicked";
+        const category = window.petaGA_SplashCategory ?? "Splash Page";
+        const label = window.petaGA_SplashLabel ?? this.options.name;
+        this.sendGAEvent(category, action, label);
+        const footer = this.container[key].querySelector(".dl-footer");
+        if (footer) {
+          footer.classList.add("open");
+        }
+        break;
       case "loading":
         this.container[key]
           .querySelector(".dl-loading")
@@ -720,7 +740,7 @@ export class PetaMultistep {
     if (!this.options[key].video) {
       return `<img class="dl-hero" src="${this.options[key].image}" alt="${this.options[key].title}" />`;
     }
-    const autoplay = this.options[key].autoplay || false;
+    const autoplay = this.options[key].video_auto_play || false;
     let markup = autoplay
       ? `<video autoplay muted loop playsinline`
       : `<video playsinline`;

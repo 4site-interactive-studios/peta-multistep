@@ -219,7 +219,7 @@ body.has-PetaMultistep-lightbox {
 
         .dl-celebration {
           position: absolute;
-          top: -700px;
+          top: -110vh;
           left: 0;
           width: 100%;
           height: 100%;
@@ -673,16 +673,34 @@ body.has-PetaMultistep-lightbox {
 }
 .foursitePetaMultistepEmbed {
   max-width: 100% !important;
-  .foursitePetaMultistepEmbed-container .dl-content .left {
-    display: block;
-    width: 100%;
-    @media (min-width: 768px) {
-      width: 50%;
+  .foursitePetaMultistepEmbed-container {
+    height: auto;
+    min-height: 550px;
+    .dl-content .left {
+      display: block;
+      width: 100%;
+      margin-bottom: 20px;
+      @media (min-width: 768px) {
+        width: 50%;
+        margin-bottom: 0;
+      }
     }
-  }
-  .foursitePetaMultistepEmbed-container .dl-footer {
-    max-height: 100%;
-    color: initial;
+    .dl-footer {
+      max-height: 100%;
+      color: initial;
+    }
+    .dl-content .right {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      min-height: 550px;
+      @media (min-width: 768px) {
+        width: 50%;
+      }
+      iframe {
+        min-height: 550px;
+      }
+    }
   }
 }
 .foursitePetaMultistepLightbox {
