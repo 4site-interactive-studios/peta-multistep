@@ -1,6 +1,9 @@
 body.has-PetaMultistep-lightbox {
   overflow: hidden;
 }
+#ticker-news {
+  margin-bottom: 0 !important;
+}
 .foursitePetaMultistepLightbox,
 .foursitePetaMultistepEmbed,
 .foursitePetaMultistepPostaction {
@@ -783,9 +786,12 @@ body.has-PetaMultistep-lightbox {
 .foursitePetaMultistepPostaction {
   .foursitePetaMultistepPostaction-container {
     height: auto;
+    .dl-footer {
+      max-height: 100%;
+      color: initial;
+    }
     .dl-container {
-      display: flex;
-      align-items: center;
+      padding-top: 45px;
     }
     .dl-container-inner {
       position: relative !important;

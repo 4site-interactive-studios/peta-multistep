@@ -151,7 +151,12 @@ export class PetaMultistep {
       </div>
       `
         : "";
+      const donor_scroll =
+        this.options[key].type === "postaction"
+          ? `<div id="donor-ticker" data-layout="news" class="donor-list">&nbsp;</div>`
+          : "";
       const markup = `
+      ${donor_scroll}
       ${mobile_markup}
       <div class="${containerClass}-container">
         ${
@@ -790,6 +795,15 @@ export class PetaMultistep {
       }
       multistep.remove();
     });
+    // Load the donor scroll script if necessary
+    if (document.querySelector("#donor-ticker")) {
+      this.loadScript(
+        "https://acb0a5d73b67fccd4bbe-c2d8138f0ea10a18dd4c43ec3aa4240a.ssl.cf5.rackcdn.com/10003/donor-scroll.js?v=4site",
+        () => {
+          let donorScroll = new window.DonorScroll();
+        }
+      );
+    }
   }
 
   isDebug() {
