@@ -16,7 +16,7 @@
  * Plugin Name:       PETA Multistep
  * Plugin URI:        https://www.4sitestudios.com/peta-multistep/
  * Description:       Add PETA Multistep Form to your WordPress site.
- * Version:           0.0.2
+ * Version:           0.0.3
  * Author:            4Site Studios
  * Author URI:        https://www.4sitestudios.com/
  * License:           GPL-2.0+
@@ -37,7 +37,7 @@ if ( defined( 'PETA_MULTISTEP_VERSION' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'PETA_MULTISTEP_VERSION', '0.0.2' );
+define( 'PETA_MULTISTEP_VERSION', '0.0.3' );
 
 // Gutenberg Block
 function peta_en_form_block() {
@@ -148,7 +148,7 @@ add_shortcode('peta-multistep', 'generate_en_form_shortcode');
 
 function peta_en_form_wp_enqueue_scripts() {
     // wp_register_script( 'peta-multistep-script', plugins_url( '/en-form/dist/peta-multistep.js', __FILE__ ), array(), PETA_MULTISTEP_VERSION, false );
-    wp_enqueue_script('peta-multistep-script', plugins_url( '/en-form/dist/peta-multistep.js', __FILE__ ), array(), PETA_MULTISTEP_VERSION, false );
+    wp_enqueue_script('peta-multistep-script', plugins_url( '/en-form/dist/peta-multistep.js', __FILE__ ), array(), PETA_MULTISTEP_VERSION, true );
 }
 add_action( 'wp_enqueue_scripts', 'peta_en_form_wp_enqueue_scripts' );
 
