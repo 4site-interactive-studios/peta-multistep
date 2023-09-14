@@ -65,8 +65,12 @@ function generate_en_form_shortcode($atts) {
 
     $page_title = get_the_title($post_id);
 
+    $peta_promotion_type = get_field('peta_promotion_type', $post_id);
+    $promotion_type = str_replace('multistep_', '', trim($peta_promotion_type));
+
     $peta_donation_page = get_field('peta_donation_page', $post_id);
-    $peta_promotion_type = trim(get_field('peta_promotion_type', $post_id)) === 'multistep_lightbox' ? 'lightbox' : 'embed';
+    
+
     $peta_hero_type = get_field('peta_hero_type', $post_id);
     $peta_image = get_field('peta_image', $post_id);
     $peta_video = get_field('peta_video', $post_id);
@@ -83,6 +87,7 @@ function generate_en_form_shortcode($atts) {
     $peta_cookie_hours = get_field('peta_cookie_hours', $post_id);
     $peta_cookie_name = get_field('peta_cookie_name', $post_id);
     $peta_content_position = get_field('peta_content_position', $post_id);
+    $peta_append_url_params = get_field('peta_append_url_params', $post_id) ? 'true' : 'false';
     $confetti = array();
 
     if(have_rows('peta_confetti', $post_id) ){
@@ -109,32 +114,32 @@ function generate_en_form_shortcode($atts) {
 
     $ret = <<<PETA
     $ret_start
-    <div id="peta-multistep-$post_id" 
-    data-id="$post_id"
-    data-name="$page_title"
-    data-url="$peta_donation_page"
-    data-type="$peta_promotion_type"
-    data-hero-type="$peta_hero_type"
-    data-image="$peta_image"
-    data-video="$peta_video"
-    data-video-auto-play="$peta_video_auto_play"
-    data-use-logo="$peta_use_logo"
-    data-logo="$peta_logo"
+    <div id='peta-multistep-$post_id"'
+    data-id='$post_id'
+    data-name='$page_title'
+    data-url='$peta_donation_page'
+    data-type='$promotion_type'
+    data-hero-type='$peta_hero_type'
+    data-image='$peta_image'
+    data-video='$peta_video'
+    data-video-auto-play='$peta_video_auto_play'
+    data-use-logo='$peta_use_logo'
+    data-logo='$peta_logo'
     data-logo-position='$peta_logo_position'
     data-logo-position-options='$logo_position_options'
-    data-divider="$peta_divider"
-    data-title="$peta_title"
-    data-paragraph="$peta_paragraph"
-    data-footer="$peta_footer"
-    data-bg-color="$peta_bg_color"
-    data-text-color="$peta_text_color"
-    data-form-color="$peta_form_color"
-    data-cookie-hours="$peta_cookie_hours"
-    data-cookie-name="$peta_cookie_name"
+    data-divider='$peta_divider'
+    data-title='$peta_title'
+    data-paragraph='$peta_paragraph'
+    data-footer='$peta_footer'
+    data-bg-color='$peta_bg_color'
+    data-text-color='$peta_text_color'
+    data-form-color='$peta_form_color'
+    data-cookie-hours='$peta_cookie_hours'
+    data-cookie-name='$peta_cookie_name'
     data-confetti='$peta_confetti'
-    data-content-position="$peta_content_position"
-    data-append-url-params="false"
-    class="peta-multistep peta-multistep-$post_id peta-multistep-$peta_content_position"></div>
+    data-content-position='$peta_content_position'
+    data-append-url-params='$peta_append_url_params'
+    class='peta-multistep peta-multistep-$post_id peta-multistep-$peta_content_position'></div>
     $ret_end
     PETA;
     return $ret;

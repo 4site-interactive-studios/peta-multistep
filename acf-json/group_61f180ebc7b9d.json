@@ -17,10 +17,11 @@
         "id": ""
       },
       "choices": {
+        "multistep_embed": "EN Multistep Embed",
         "multistep_lightbox": "EN Multistep Lightbox",
-        "multistep_embed": "EN Multistep Embed"
+        "multistep_postaction": "EN Multistep Post-Action"
       },
-      "default_value": "",
+      "default_value": "multistep_embed",
       "return_format": "value",
       "allow_null": 0,
       "layout": "horizontal"
@@ -56,7 +57,15 @@
       "type": "button_group",
       "instructions": "",
       "required": 0,
-      "conditional_logic": 0,
+      "conditional_logic": [
+        [
+          {
+            "field": "field_63694582ec123",
+            "operator": "!=",
+            "value": "multistep_postaction"
+          }
+        ]
+      ],
       "wrapper": {
         "width": "50",
         "class": "",
@@ -88,6 +97,26 @@
       },
       "default_value": "",
       "placeholder": ""
+    },
+    {
+      "key": "field_6502235859271",
+      "label": "Append URL Parameters",
+      "name": "peta_append_url_params",
+      "aria-label": "",
+      "type": "true_false",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "message": "",
+      "default_value": 1,
+      "ui_on_text": "Yes",
+      "ui_off_text": "No",
+      "ui": 1
     },
     {
       "key": "field_61f1829913123",
@@ -122,7 +151,7 @@
       "label": "Paragraph",
       "name": "peta_paragraph",
       "aria-label": "",
-      "type": "textarea",
+      "type": "wysiwyg",
       "instructions": "Content of the Multistep",
       "required": 0,
       "conditional_logic": [
@@ -140,10 +169,10 @@
         "id": ""
       },
       "default_value": "",
-      "maxlength": "",
-      "rows": 4,
-      "placeholder": "",
-      "new_lines": "br"
+      "tabs": "all",
+      "toolbar": "full",
+      "media_upload": 1,
+      "delay": 0
     },
     {
       "key": "field_6243ac1740123",
@@ -159,6 +188,11 @@
             "field": "field_6445bdb9e4123",
             "operator": "!=",
             "value": "hidden"
+          },
+          {
+            "field": "field_63694582ec123",
+            "operator": "!=",
+            "value": "multistep_postaction"
           }
         ]
       ],
@@ -273,6 +307,11 @@
             "field": "field_6445bdb9e4123",
             "operator": "!=",
             "value": "hidden"
+          },
+          {
+            "field": "field_63694582ec123",
+            "operator": "!=",
+            "value": "multistep_postaction"
           }
         ]
       ],
@@ -543,6 +582,11 @@
             "field": "field_6445bdb9e4123",
             "operator": "!=",
             "value": "hidden"
+          },
+          {
+            "field": "field_63694582ec123",
+            "operator": "!=",
+            "value": "multistep_postaction"
           }
         ]
       ],
@@ -569,6 +613,11 @@
             "field": "field_6445bdb9e4123",
             "operator": "!=",
             "value": "hidden"
+          },
+          {
+            "field": "field_63694582ec123",
+            "operator": "!=",
+            "value": "multistep_postaction"
           }
         ]
       ],
@@ -604,7 +653,7 @@
       "label": "Footer",
       "name": "peta_footer",
       "aria-label": "",
-      "type": "textarea",
+      "type": "wysiwyg",
       "instructions": "Content of the footer.",
       "required": 0,
       "conditional_logic": [
@@ -622,10 +671,10 @@
         "id": ""
       },
       "default_value": "",
-      "maxlength": "",
-      "rows": 4,
-      "placeholder": "",
-      "new_lines": "br"
+      "tabs": "all",
+      "toolbar": "basic",
+      "media_upload": 0,
+      "delay": 0
     },
     {
       "key": "field_6243b2605a123",

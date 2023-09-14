@@ -2,7 +2,8 @@ body.has-PetaMultistep-lightbox {
   overflow: hidden;
 }
 .foursitePetaMultistepLightbox,
-.foursitePetaMultistepEmbed {
+.foursitePetaMultistepEmbed,
+.foursitePetaMultistepPostaction {
   &.content-position-hidden .left {
     display: none !important;
   }
@@ -47,7 +48,8 @@ body.has-PetaMultistep-lightbox {
     }
   }
   .foursitePetaMultistepLightbox-container,
-  .foursitePetaMultistepEmbed-container {
+  .foursitePetaMultistepEmbed-container,
+  .foursitePetaMultistepPostaction-container {
     width: 100%;
     height: auto;
     color: #4f606c;
@@ -541,7 +543,8 @@ body.has-PetaMultistep-lightbox {
     }
   }
   .foursite-PetaMultistepLightbox-mobile-container,
-  .foursite-PetaMultistepEmbed-mobile-container {
+  .foursite-PetaMultistepEmbed-mobile-container,
+  .foursite-PetaMultistepPostaction-mobile-container {
     display: block;
     position: relative;
     top: 0;
@@ -775,5 +778,36 @@ body.has-PetaMultistep-lightbox {
   }
   .foursitePetaMultistepLightbox-container {
     border-radius: 5px;
+  }
+}
+.foursitePetaMultistepPostaction {
+  .foursitePetaMultistepPostaction-container {
+    height: auto;
+    .dl-container {
+      display: flex;
+      align-items: center;
+    }
+    .dl-container-inner {
+      position: relative !important;
+      inset: initial !important;
+      padding: 0 !important;
+    }
+    .dl-content .left {
+      display: block;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    .dl-content .right {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      min-height: 550px;
+      @media (min-width: 768px) {
+        max-width: 375px;
+      }
+      iframe {
+        min-height: 550px;
+      }
+    }
   }
 }

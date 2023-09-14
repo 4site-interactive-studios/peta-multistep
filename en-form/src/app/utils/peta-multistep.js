@@ -99,6 +99,11 @@ export class PetaMultistep {
         this.options[key].confetti = JSON.parse(data.confetti);
       if (this.isDebug())
         console.log("PetaMultistep: loadOptions: options: ", this.options[key]);
+
+      if (this.options[key].type === "postaction") {
+        this.options[key].txt_color = "#000000";
+        this.options[key].bg_color = "#FFFFFF";
+      }
     });
   }
   init() {
@@ -127,10 +132,10 @@ export class PetaMultistep {
           url.searchParams.append(key, value);
         }
       }
-      const containerClass =
-        this.options[key].type === "lightbox"
-          ? `foursitePetaMultistepLightbox`
-          : `foursitePetaMultistepEmbed`;
+      const containerClass = `foursitePetaMultistep${
+        this.options[key].type.charAt(0).toUpperCase() +
+        this.options[key].type.slice(1)
+      }`;
       const container = document.createElement("div");
       container.id = this.containerID[key];
       container.dataset.key = key;
@@ -226,9 +231,9 @@ export class PetaMultistep {
                 <div class="double-bounce2"></div>
               </div>
             </div>
-            <iframe allow='payment' loading='lazy' id='iframe_${
+            <iframe loading='lazy' id='iframe_${
               this.containerID[key]
-            }' width='100%' scrolling='no' class='dl-iframe' src='${url}' frameborder='0' data-key='${key}' allowfullscreen></iframe>
+            }' width='100%' scrolling='no' class='dl-iframe' src='${url}' frameborder='0' data-key='${key}' allow='autoplay; encrypted-media; payment' allowpaymentrequest="true" referrerpolicy="unsafe-url" crossorigin></iframe>
           </div>
         </div>
         <div class="dl-footer">
@@ -737,6 +742,7 @@ export class PetaMultistep {
     return viewportWidth <= 799;
   }
   loadHero(key) {
+    if (this.options[key].type === "postaction") return "";
     if (!this.options[key].video) {
       return `<img class="dl-hero" src="${this.options[key].image}" alt="${this.options[key].title}" />`;
     }
