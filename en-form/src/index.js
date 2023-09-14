@@ -21,7 +21,9 @@ if (targetNode) {
           mutation.target.querySelector(".peta-multistep") &&
           "PetaMultistep" in window
         ) {
-          new window.PetaMultistep();
+          window.setTimeout(function () {
+            new window.PetaMultistep();
+          }, 300);
         }
       }
     }
