@@ -37,7 +37,7 @@ if ( defined( 'PETA_MULTISTEP_VERSION' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'PETA_MULTISTEP_VERSION', '0.0.1' );
+define( 'PETA_MULTISTEP_VERSION', '0.0.2' );
 
 // Gutenberg Block
 function peta_en_form_block() {
