@@ -48,7 +48,6 @@ add_action( 'init', 'peta_en_form_block' );
 function generate_en_form_shortcode($atts) {
     $ret_start = '<!-- PETA Multistep Start -->';
     $ret_end = '<!-- PETA Multistep End -->';
-	wp_enqueue_script('peta-multistep-script'); // Only load the script when the shortcode is used
     // We will need to get the POST ID from the shortcode, and load the form data from the post
     $post_id = $atts['id'];
     if (empty($post_id)) {
@@ -148,7 +147,8 @@ function generate_en_form_shortcode($atts) {
 add_shortcode('peta-multistep', 'generate_en_form_shortcode');
 
 function peta_en_form_wp_enqueue_scripts() {
-    wp_register_script( 'peta-multistep-script', plugins_url( '/en-form/dist/peta-multistep.js', __FILE__ ), array(), PETA_MULTISTEP_VERSION, false );
+    // wp_register_script( 'peta-multistep-script', plugins_url( '/en-form/dist/peta-multistep.js', __FILE__ ), array(), PETA_MULTISTEP_VERSION, false );
+    wp_enqueue_script('peta-multistep-script', plugins_url( '/en-form/dist/peta-multistep.js', __FILE__ ), array(), PETA_MULTISTEP_VERSION, false );
 }
 add_action( 'wp_enqueue_scripts', 'peta_en_form_wp_enqueue_scripts' );
 
