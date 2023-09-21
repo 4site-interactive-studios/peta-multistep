@@ -808,7 +808,7 @@ body.has-PetaMultistep-lightbox {
     height: auto;
     .dl-footer {
       width: 90%;
-      margin: auto;
+      margin: 0 auto;
       max-height: 100%;
       color: initial;
       @media (min-width: 768px) {
@@ -838,6 +838,7 @@ body.has-PetaMultistep-lightbox {
       max-width: 100%;
       height: auto;
       min-height: 550px;
+      padding: 0 !important;
       @media (min-width: 768px) {
         max-width: 375px;
         border: 2px solid #e9e9e9;

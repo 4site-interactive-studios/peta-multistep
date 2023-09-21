@@ -211,19 +211,25 @@ export class PetaMultistep {
                     : ""
                 }
               </div>
-              <div class="dl-celebration">
-                <div class="frame frame1">
-                    <h3>and the animals</h3>
-                    <h2>THANK YOU!</h2>
+              ${
+                this.options[key].type !== "postaction"
+                  ? `
+                <div class="dl-celebration">
+                  <div class="frame frame1">
+                      <h3>and the animals</h3>
+                      <h2>THANK YOU!</h2>
+                  </div>
+                  <div class="frame frame2">
+                    <div class="bunnyAnimation"></div>
+                  </div>
+                  <div class="frame frame3">
+                    <h2 class="name">Friend,</h2>
+                    <h2 class="phrase">you are a hero <br>to animals.</h2>
+                  </div>
                 </div>
-                <div class="frame frame2">
-                  <div class="bunnyAnimation"></div>
-                </div>
-                <div class="frame frame3">
-                  <h2 class="name">Friend,</h2>
-                  <h2 class="phrase">you are a hero <br>to animals.</h2>
-                </div>
-              </div>
+              `
+                  : ""
+              }
             </div>
           </div>
           <div class="right">
