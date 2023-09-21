@@ -2,7 +2,7 @@ body.has-PetaMultistep-lightbox {
   overflow: hidden;
 }
 #donor-ticker {
-  padding-top: 20px;
+  padding-top: 40px;
   min-height: 80px !important;
   box-sizing: content-box;
 }
@@ -11,9 +11,9 @@ body.has-PetaMultistep-lightbox {
   max-width: 90% !important;
   border: 2px solid #e9e9e9 !important;
   border-radius: 10px !important;
+  margin: auto !important;
   @media (min-width: 768px) {
     max-width: 880px !important;
-    margin: auto !important;
   }
 }
 .foursitePetaMultistepLightbox,
@@ -797,16 +797,24 @@ body.has-PetaMultistep-lightbox {
 }
 .foursitePetaMultistepPostaction {
   background-color: #fff;
+  padding-bottom: 20px;
   @media (min-width: 768px) {
     max-width: 880px;
     margin: 20px auto;
-    padding-bottom: 40px;
+    padding: 0 60px 40px;
+    box-sizing: content-box;
   }
   .foursitePetaMultistepPostaction-container {
     height: auto;
     .dl-footer {
+      width: 90%;
+      margin: auto;
       max-height: 100%;
       color: initial;
+      @media (min-width: 768px) {
+        width: 100%;
+        margin-top: 40px;
+      }
     }
     .dl-container {
       padding-top: 45px;
@@ -818,8 +826,12 @@ body.has-PetaMultistep-lightbox {
     }
     .dl-content .left {
       display: block;
-      width: 100%;
-      margin-bottom: 20px;
+      width: 90%;
+      margin: auto;
+      @media (min-width: 768px) {
+        width: 100%;
+        margin-bottom: 20px;
+      }
     }
     .dl-content .right {
       width: 100%;
