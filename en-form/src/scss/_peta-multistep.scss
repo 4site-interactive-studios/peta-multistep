@@ -827,10 +827,9 @@ body.has-PetaMultistep-lightbox {
     .dl-content .left {
       display: block;
       width: 90%;
-      margin: auto;
+      margin: 20px auto;
       @media (min-width: 768px) {
         width: 100%;
-        margin-bottom: 20px;
       }
     }
     .dl-content .right {
