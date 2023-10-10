@@ -113,7 +113,7 @@ function generate_en_form_shortcode($atts) {
 
     $ret = <<<PETA
     $ret_start
-    <div id='peta-multistep-$post_id"'
+    <div id='peta-multistep-$post_id'
     data-id='$post_id'
     data-name='$page_title'
     data-url='$peta_donation_page'
