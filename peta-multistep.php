@@ -62,7 +62,7 @@ function generate_en_form_shortcode($atts) {
         return $ret_start . '<!-- PETA Multistep is turned off -->' . $ret_end;
     }
 
-    $page_title = get_the_title($post_id);
+    $page_title = htmlspecialchars(get_the_title($post_id), ENT_QUOTES, 'UTF-8');
 
     $peta_promotion_type = get_field('peta_promotion_type', $post_id);
     $promotion_type = str_replace('multistep_', '', trim($peta_promotion_type));
@@ -77,9 +77,9 @@ function generate_en_form_shortcode($atts) {
     $peta_logo = get_field('peta_logo', $post_id);
     $peta_logo_position = get_field('peta_logo_position', $post_id);
     $peta_divider = get_field('peta_divider', $post_id);
-    $peta_title = get_field('peta_title', $post_id);
-    $peta_paragraph = get_field('peta_paragraph', $post_id);
-    $peta_footer = get_field('peta_footer', $post_id);
+    $peta_title = htmlspecialchars(get_field('peta_title', $post_id), ENT_QUOTES, 'UTF-8');
+    $peta_paragraph = htmlspecialchars(get_field('peta_paragraph', $post_id), ENT_QUOTES, 'UTF-8');
+    $peta_footer = htmlspecialchars(get_field('peta_footer', $post_id), ENT_QUOTES, 'UTF-8');
     $peta_bg_color = get_field('peta_bg_color', $post_id);
     $peta_text_color = get_field('peta_text_color', $post_id);
     $peta_form_color = get_field('peta_form_color', $post_id);
@@ -97,7 +97,7 @@ function generate_en_form_shortcode($atts) {
     }
 
     $peta_video_auto_play = ($peta_hero_type == 'autoplay-video');
-    $peta_confetti = json_encode($confetti);
+    $peta_confetti = htmlspecialchars(json_encode($confetti), ENT_QUOTES, 'UTF-8');
     $logo_position_options = isset($peta_logo_position['position_options']) ? $peta_logo_position['position_options'] : [];
     $logo_position_options_values['top'] = isset($peta_logo_position['top']) ? $peta_logo_position['top'] : '';
     $logo_position_options_values['left'] = isset($peta_logo_position['left']) ? $peta_logo_position['left'] : '';
@@ -108,37 +108,37 @@ function generate_en_form_shortcode($atts) {
         $logo_position_options = [];
     }
 
-    $peta_logo_position = json_encode($logo_position_options);
-    $logo_position_options = json_encode($logo_position_options_values);
+    $peta_logo_position = htmlspecialchars(json_encode($logo_position_options), ENT_QUOTES, 'UTF-8');
+    $logo_position_options = htmlspecialchars(json_encode($logo_position_options_values), ENT_QUOTES, 'UTF-8');
 
     $ret = <<<PETA
     $ret_start
-    <div id='peta-multistep-$post_id'
-    data-id='$post_id'
-    data-name='$page_title'
-    data-url='$peta_donation_page'
-    data-type='$promotion_type'
-    data-hero-type='$peta_hero_type'
-    data-image='$peta_image'
-    data-video='$peta_video'
-    data-video-auto-play='$peta_video_auto_play'
-    data-use-logo='$peta_use_logo'
-    data-logo='$peta_logo'
-    data-logo-position='$peta_logo_position'
-    data-logo-position-options='$logo_position_options'
-    data-divider='$peta_divider'
-    data-title='$peta_title'
-    data-paragraph='$peta_paragraph'
-    data-footer='$peta_footer'
-    data-bg-color='$peta_bg_color'
-    data-text-color='$peta_text_color'
-    data-form-color='$peta_form_color'
-    data-cookie-hours='$peta_cookie_hours'
-    data-cookie-name='$peta_cookie_name'
-    data-confetti='$peta_confetti'
-    data-content-position='$peta_content_position'
-    data-append-url-params='$peta_append_url_params'
-    class='peta-multistep peta-multistep-$post_id peta-multistep-$peta_content_position'></div>
+    <div id="peta-multistep-$post_id"
+    data-id="$post_id"
+    data-name="$page_title"
+    data-url="$peta_donation_page"
+    data-type="$promotion_type"
+    data-hero-type="$peta_hero_type"
+    data-image="$peta_image"
+    data-video="$peta_video"
+    data-video-auto-play="$peta_video_auto_play"
+    data-use-logo="$peta_use_logo"
+    data-logo="$peta_logo"
+    data-logo-position="$peta_logo_position"
+    data-logo-position-options="$logo_position_options"
+    data-divider="$peta_divider"
+    data-title="$peta_title"
+    data-paragraph="$peta_paragraph"
+    data-footer="$peta_footer"
+    data-bg-color="$peta_bg_color"
+    data-text-color="$peta_text_color"
+    data-form-color="$peta_form_color"
+    data-cookie-hours="$peta_cookie_hours"
+    data-cookie-name="$peta_cookie_name"
+    data-confetti="$peta_confetti"
+    data-content-position="$peta_content_position"
+    data-append-url-params="$peta_append_url_params"
+    class="peta-multistep peta-multistep-$post_id peta-multistep-$peta_content_position"></div>
     $ret_end
     PETA;
     return $ret;
