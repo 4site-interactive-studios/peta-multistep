@@ -405,10 +405,14 @@ export class PetaMultistep {
     // console.log("PetaMultistep: receiveMessage: event: ", event.data);
     const message = event.data;
     const iframe = this.getFrameByEvent(event);
-    if (!iframe.hasAttribute("data-key")) return;
+    if (!iframe || !iframe.hasAttribute("data-key")) return;
     const key = iframe.dataset.key;
 
-    if (message && "frameHeight" in message) {
+    if (
+      typeof message === "object" &&
+      message !== null &&
+      "frameHeight" in message
+    ) {
       iframe.style.height = message.frameHeight + "px";
       if ("scroll" in message && !this.isInViewport(iframe)) {
         // Scroll to the top of the iframe smoothly

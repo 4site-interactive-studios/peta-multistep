@@ -16,7 +16,7 @@
  * Plugin Name:       PETA Multistep
  * Plugin URI:        https://www.4sitestudios.com/peta-multistep/
  * Description:       Add PETA Multistep Form to your WordPress site.
- * Version:           0.0.3
+ * Version:           0.0.4
  * Author:            4Site Studios
  * Author URI:        https://www.4sitestudios.com/
  * License:           GPL-2.0+
