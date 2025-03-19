@@ -16,7 +16,7 @@
  * Plugin Name:       PETA Multistep
  * Plugin URI:        https://www.4sitestudios.com/peta-multistep/
  * Description:       Add PETA Multistep Form to your WordPress site.
- * Version:           0.0.4
+ * Version:           0.0.5
  * Author:            4Site Studios
  * Author URI:        https://www.4sitestudios.com/
  * License:           GPL-2.0+
@@ -75,7 +75,6 @@ function generate_en_form_shortcode($atts) {
     $peta_video = get_field('peta_video', $post_id);
     $peta_use_logo = get_field('peta_use_logo', $post_id);
     $peta_logo = get_field('peta_logo', $post_id);
-    $peta_logo_position = get_field('peta_logo_position', $post_id);
     $peta_divider = get_field('peta_divider', $post_id);
     $peta_title = htmlspecialchars(get_field('peta_title', $post_id), ENT_QUOTES, 'UTF-8');
     $peta_paragraph = htmlspecialchars(get_field('peta_paragraph', $post_id), ENT_QUOTES, 'UTF-8');
@@ -98,18 +97,6 @@ function generate_en_form_shortcode($atts) {
 
     $peta_video_auto_play = ($peta_hero_type == 'autoplay-video');
     $peta_confetti = htmlspecialchars(json_encode($confetti), ENT_QUOTES, 'UTF-8');
-    $logo_position_options = isset($peta_logo_position['position_options']) ? $peta_logo_position['position_options'] : [];
-    $logo_position_options_values['top'] = isset($peta_logo_position['top']) ? $peta_logo_position['top'] : '';
-    $logo_position_options_values['left'] = isset($peta_logo_position['left']) ? $peta_logo_position['left'] : '';
-    $logo_position_options_values['right'] = isset($peta_logo_position['right']) ? $peta_logo_position['right'] : '';
-    $logo_position_options_values['bottom'] = isset($peta_logo_position['bottom']) ? $peta_logo_position['bottom'] : '';
-    
-    if(!is_array($logo_position_options)) {
-        $logo_position_options = [];
-    }
-
-    $peta_logo_position = htmlspecialchars(json_encode($logo_position_options), ENT_QUOTES, 'UTF-8');
-    $logo_position_options = htmlspecialchars(json_encode($logo_position_options_values), ENT_QUOTES, 'UTF-8');
 
     $ret = <<<PETA
     $ret_start
@@ -124,8 +111,6 @@ function generate_en_form_shortcode($atts) {
     data-video-auto-play="$peta_video_auto_play"
     data-use-logo="$peta_use_logo"
     data-logo="$peta_logo"
-    data-logo-position="$peta_logo_position"
-    data-logo-position-options="$logo_position_options"
     data-divider="$peta_divider"
     data-title="$peta_title"
     data-paragraph="$peta_paragraph"

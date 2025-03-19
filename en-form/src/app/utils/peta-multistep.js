@@ -15,8 +15,6 @@ export class PetaMultistep {
       video: "",
       video_auto_play: false,
       logo: "",
-      logo_position: "top",
-      logo_position_options: ["top", "bottom"],
       content_position: "left",
       title: "",
       paragraph: "",
@@ -63,12 +61,6 @@ export class PetaMultistep {
       if ("videoAutoPlay" in data)
         this.options[key].video_auto_play = data.videoAutoPlay;
       if ("logo" in data) this.options[key].logo = data.logo;
-      if ("logoPosition" in data)
-        this.options[key].logo_position = JSON.parse(data.logoPosition);
-      if ("logoPositionOptions" in data)
-        this.options[key].logo_position_options = JSON.parse(
-          data.logoPositionOptions
-        );
       if ("title" in data) this.options[key].title = data.title;
       if ("paragraph" in data) this.options[key].paragraph = data.paragraph;
       if ("divider" in data) this.options[key].divider = data.divider;
@@ -80,7 +72,7 @@ export class PetaMultistep {
         this.options[key].mobile_paragraph = data.mobileParagraph;
       if ("footer" in data) this.options[key].footer = data.footer;
       if ("bgColor" in data) this.options[key].bg_color = data.bgColor;
-      if ("txtColor" in data) this.options[key].txt_color = data.txtColor;
+      if ("textColor" in data) this.options[key].txt_color = data.textColor;
       if ("formColor" in data) this.options[key].form_color = data.formColor;
       if ("url" in data) this.options[key].url = data.url;
       if ("cookieHours" in data)

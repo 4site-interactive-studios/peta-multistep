@@ -1,5 +1,5 @@
 {
-  "key": "group_61f180ebc7b9d",
+  "key": "group_61f180ebc7b94",
   "title": "PETA Multistep",
   "fields": [
     {
@@ -18,12 +18,13 @@
       },
       "choices": {
         "multistep_embed": "EN Multistep Embed",
-        "multistep_lightbox": "EN Multistep Lightbox",
+        "multistep_lightbox": "EN Multistep Splash Page",
         "multistep_postaction": "EN Multistep Post-Action"
       },
       "default_value": "multistep_embed",
       "return_format": "value",
       "allow_null": 0,
+      "allow_in_bindings": 1,
       "layout": "horizontal"
     },
     {
@@ -347,188 +348,10 @@
       },
       "message": "",
       "default_value": 1,
+      "allow_in_bindings": 1,
       "ui_on_text": "Yes",
       "ui_off_text": "No",
       "ui": 1
-    },
-    {
-      "key": "field_6243ad93bd123",
-      "label": "Logo Position",
-      "name": "peta_logo_position",
-      "aria-label": "",
-      "type": "group",
-      "instructions": "The video will be muted and auto-play with an infinite loop if true.",
-      "required": 0,
-      "conditional_logic": [
-        [
-          {
-            "field": "field_624ca8da9a123",
-            "operator": "==",
-            "value": "1"
-          }
-        ]
-      ],
-      "wrapper": {
-        "width": "50",
-        "class": "",
-        "id": ""
-      },
-      "layout": "block",
-      "acfe_seamless_style": 0,
-      "acfe_group_modal": 0,
-      "acfe_group_modal_close": 0,
-      "acfe_group_modal_button": "",
-      "acfe_group_modal_size": "large",
-      "sub_fields": [
-        {
-          "key": "field_643044cbfe123",
-          "label": "Position Options",
-          "name": "position_options",
-          "aria-label": "",
-          "type": "checkbox",
-          "instructions": "",
-          "required": 0,
-          "conditional_logic": 0,
-          "wrapper": {
-            "width": "",
-            "class": "",
-            "id": ""
-          },
-          "choices": {
-            "left": "left",
-            "right": "right",
-            "top": "top",
-            "bottom": "bottom"
-          },
-          "default_value": ["left", "top"],
-          "return_format": "value",
-          "allow_custom": 0,
-          "layout": "horizontal",
-          "toggle": 0,
-          "save_custom": 0,
-          "custom_choice_button_text": "Add new choice"
-        },
-        {
-          "key": "field_6243ade2bd123",
-          "label": "Top",
-          "name": "top",
-          "aria-label": "",
-          "type": "number",
-          "instructions": "",
-          "required": 0,
-          "conditional_logic": [
-            [
-              {
-                "field": "field_643044cbfe123",
-                "operator": "==",
-                "value": "top"
-              }
-            ]
-          ],
-          "wrapper": {
-            "width": "50",
-            "class": "",
-            "id": ""
-          },
-          "default_value": 25,
-          "min": "",
-          "max": "",
-          "placeholder": "",
-          "step": "",
-          "prepend": "",
-          "append": "px"
-        },
-        {
-          "key": "field_6243ae45bd123",
-          "label": "Bottom",
-          "name": "bottom",
-          "aria-label": "",
-          "type": "number",
-          "instructions": "",
-          "required": 0,
-          "conditional_logic": [
-            [
-              {
-                "field": "field_643044cbfe123",
-                "operator": "==",
-                "value": "bottom"
-              }
-            ]
-          ],
-          "wrapper": {
-            "width": "50",
-            "class": "",
-            "id": ""
-          },
-          "default_value": 0,
-          "min": "",
-          "max": "",
-          "placeholder": "",
-          "step": "",
-          "prepend": "",
-          "append": "px"
-        },
-        {
-          "key": "field_6243b0ee68123",
-          "label": "Left",
-          "name": "left",
-          "aria-label": "",
-          "type": "number",
-          "instructions": "",
-          "required": 0,
-          "conditional_logic": [
-            [
-              {
-                "field": "field_643044cbfe123",
-                "operator": "==",
-                "value": "left"
-              }
-            ]
-          ],
-          "wrapper": {
-            "width": "50",
-            "class": "",
-            "id": ""
-          },
-          "default_value": 25,
-          "min": "",
-          "max": "",
-          "placeholder": "",
-          "step": "",
-          "prepend": "",
-          "append": "px"
-        },
-        {
-          "key": "field_6243b0fd68123",
-          "label": "Right",
-          "name": "right",
-          "aria-label": "",
-          "type": "number",
-          "instructions": "",
-          "required": 0,
-          "conditional_logic": [
-            [
-              {
-                "field": "field_643044cbfe123",
-                "operator": "==",
-                "value": "right"
-              }
-            ]
-          ],
-          "wrapper": {
-            "width": "50",
-            "class": "",
-            "id": ""
-          },
-          "default_value": 0,
-          "min": "",
-          "max": "",
-          "placeholder": "",
-          "step": "",
-          "prepend": "",
-          "append": "px"
-        }
-      ]
     },
     {
       "key": "field_61f1822313123",
@@ -553,7 +376,7 @@
         ]
       ],
       "wrapper": {
-        "width": "50",
+        "width": "",
         "class": "",
         "id": ""
       },
@@ -566,6 +389,7 @@
       "max_height": "",
       "max_size": "",
       "mime_types": "",
+      "allow_in_bindings": 1,
       "preview_size": "medium"
     },
     {
@@ -741,8 +565,9 @@
         "class": "",
         "id": ""
       },
-      "default_value": "HideDonationLightbox",
+      "default_value": "HideDonationSplash",
       "maxlength": "",
+      "allow_in_bindings": 1,
       "placeholder": "",
       "prepend": "",
       "append": ""

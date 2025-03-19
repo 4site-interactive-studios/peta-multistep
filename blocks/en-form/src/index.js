@@ -17,7 +17,7 @@ import {
  */
 import "./style.scss";
 
-registerBlockType("promotions/en-form", {
+registerBlockType("peta/en-form", {
   title: __("Engaging Networks Embedded Form", "promotions"),
   icon: "embed-generic",
   category: "embed",
