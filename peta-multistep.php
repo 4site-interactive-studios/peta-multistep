@@ -73,7 +73,6 @@ function generate_en_form_shortcode($atts) {
     $peta_hero_type = get_field('peta_hero_type', $post_id);
     $peta_image = get_field('peta_image', $post_id);
     $peta_video = get_field('peta_video', $post_id);
-    $peta_use_logo = get_field('peta_use_logo', $post_id);
     $peta_logo = get_field('peta_logo', $post_id);
     $peta_divider = get_field('peta_divider', $post_id);
     $peta_title = htmlspecialchars(get_field('peta_title', $post_id), ENT_QUOTES, 'UTF-8');
@@ -87,6 +86,11 @@ function generate_en_form_shortcode($atts) {
     $peta_content_position = get_field('peta_content_position', $post_id);
     $peta_append_url_params = get_field('peta_append_url_params', $post_id) ? 'true' : 'false';
     $confetti = array();
+
+    // If peta_promotion_type is not multistep_embed, peta_content_position is always left
+    if($peta_promotion_type !== 'multistep_embed'){
+        $peta_content_position = 'left';
+    }
 
     if(have_rows('peta_confetti', $post_id) ){
         while( have_rows('peta_confetti', $post_id) ){
@@ -109,7 +113,6 @@ function generate_en_form_shortcode($atts) {
     data-image="$peta_image"
     data-video="$peta_video"
     data-video-auto-play="$peta_video_auto_play"
-    data-use-logo="$peta_use_logo"
     data-logo="$peta_logo"
     data-divider="$peta_divider"
     data-title="$peta_title"

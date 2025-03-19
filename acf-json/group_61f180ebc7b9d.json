@@ -62,8 +62,8 @@
         [
           {
             "field": "field_63694582ec123",
-            "operator": "!=",
-            "value": "multistep_postaction"
+            "operator": "==",
+            "value": "multistep_embed"
           }
         ]
       ],
@@ -80,6 +80,7 @@
       "default_value": "left",
       "return_format": "value",
       "allow_null": 0,
+      "allow_in_bindings": 1,
       "layout": "horizontal"
     },
     {
@@ -325,35 +326,6 @@
       "placeholder": ""
     },
     {
-      "key": "field_624ca8da9a123",
-      "label": "Use Logo",
-      "name": "peta_use_logo",
-      "aria-label": "",
-      "type": "true_false",
-      "instructions": "",
-      "required": 0,
-      "conditional_logic": [
-        [
-          {
-            "field": "field_63694582ec123",
-            "operator": "==",
-            "value": "multistep_lightbox"
-          }
-        ]
-      ],
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "message": "",
-      "default_value": 1,
-      "allow_in_bindings": 1,
-      "ui_on_text": "Yes",
-      "ui_off_text": "No",
-      "ui": 1
-    },
-    {
       "key": "field_61f1822313123",
       "label": "Logo",
       "name": "peta_logo",
@@ -363,11 +335,6 @@
       "required": 0,
       "conditional_logic": [
         [
-          {
-            "field": "field_624ca8da9a123",
-            "operator": "==",
-            "value": "1"
-          },
           {
             "field": "field_6445bdb9e4123",
             "operator": "!=",
