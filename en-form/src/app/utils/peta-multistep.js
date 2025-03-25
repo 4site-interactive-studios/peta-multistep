@@ -1,7 +1,7 @@
 import "./confetti";
 export class PetaMultistep {
   constructor() {
-    console.log("PetaMultistep: constructor");
+    if (this.isDebug()) console.log("PetaMultistep: constructor");
     window.dataLayer = window.dataLayer || [];
     this.multisteps = document.querySelectorAll(".peta-multistep");
     if (!this.multisteps.length) {
@@ -99,7 +99,7 @@ export class PetaMultistep {
     });
   }
   init() {
-    console.log("PetaMultistep: init");
+    if (this.isDebug()) console.log("PetaMultistep: init");
     window.addEventListener("message", this.receiveMessage.bind(this), false);
     this.loadOptions();
     this.build();
@@ -354,7 +354,7 @@ export class PetaMultistep {
   }
 
   open() {
-    console.log(this.lightbox);
+    if (this.isDebug()) console.log(this.lightbox);
     const action = window.petaGA_GenericAction_Viewed ?? "Viewed";
     const category = window.petaGA_SplashCategory ?? "Splash Page";
     const label =
@@ -428,15 +428,16 @@ export class PetaMultistep {
         break;
       case "donationinfo":
         this.donationinfo[key] = JSON.parse(message.value);
-        console.log(
-          "PetaMultistep: receiveMessage: donationinfo: ",
-          this.donationinfo[key]
-        );
+        if (this.isDebug())
+          console.log(
+            "PetaMultistep: receiveMessage: donationinfo: ",
+            this.donationinfo[key]
+          );
         break;
     }
   }
   status(status, key) {
-    console.log("PetaMultistep: status: ", status, key);
+    if (this.isDebug()) console.log("PetaMultistep: status: ", status, key);
     switch (status) {
       case "footer":
         const action = window.petaGA_GenericAction_Clicked ?? "Clicked";
@@ -709,7 +710,6 @@ export class PetaMultistep {
 
   getCookie(key) {
     const cookieName = this.options[key].cookie_name || "HidePetaMultistep";
-    console.log(cookieName);
     return document.cookie.split("; ").reduce((r, v) => {
       const parts = v.split("=");
       return parts[0] === cookieName ? decodeURIComponent(parts[1]) : r;
