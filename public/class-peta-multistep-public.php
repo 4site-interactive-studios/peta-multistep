@@ -78,6 +78,15 @@ class Peta_Multistep_Public {
 	}
 
 	/**
+	 * Add a preload link for the main stylesheet.
+	 *
+	 * @since    1.0.0
+	 */
+	public function add_preload_link() {
+		echo '<link rel="preload" href="' . plugin_dir_url( __FILE__ ) . 'css/peta-multistep-public.css?ver=' . $this->version . '" as="style">';
+	}
+
+	/**
 	 * Register the JavaScript for the public-facing side of the site.
 	 *
 	 * @since    1.0.0
