@@ -136,7 +136,7 @@ add_shortcode('peta-multistep', 'generate_en_form_shortcode');
 
 function peta_en_form_wp_enqueue_scripts() {
     // wp_register_script( 'peta-multistep-script', plugins_url( '/en-form/dist/peta-multistep.js', __FILE__ ), array(), PETA_MULTISTEP_VERSION, false );
-    wp_enqueue_script('peta-multistep-script', plugins_url( '/en-form/dist/peta-multistep.js', __FILE__ ), array(), PETA_MULTISTEP_VERSION, true );
+    wp_enqueue_script('peta-multistep-script', plugins_url( '/en-form/dist/peta-multistep.js', __FILE__ ), array(), PETA_MULTISTEP_VERSION, array('strategy' => 'defer') );
 }
 add_action( 'wp_enqueue_scripts', 'peta_en_form_wp_enqueue_scripts' );
 
