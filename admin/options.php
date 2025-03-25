@@ -104,13 +104,14 @@ function foursite_peta_multistep_sortable_columns( $columns ) {
 }
 
 function copy_to_clipboard_js() {
-    echo '"<script type="text/javascript">
+  echo <<< PETA_COPY
+    <script type="text/javascript">
     function copyToClipboard(element) {
-      var $temp = jQuery("<input>");
-      jQuery("body").append($temp);
-      $temp.val(jQuery(element).prev().val()).select();
+      var _temp = jQuery("<input>");
+      jQuery("body").append(_temp);
+      _temp.val(jQuery(element).prev().val()).select();
       document.execCommand("copy");
-      $temp.remove();
+      _temp.remove();
       element.innerHTML = "Copied!";
       element.classList.remove("button-primary");
       setTimeout(function(){
@@ -118,13 +119,20 @@ function copy_to_clipboard_js() {
         element.classList.add("button-primary");
       }, 2000);
     }
-    </script>"';
+    </script>
+PETA_COPY;
 }
-add_action('admin_footer', 'copy_to_clipboard_js');
-
 function peta_multistep_remove_inline_edit( $actions, $post ){
     // unset( $actions );
     unset( $actions['inline hide-if-no-js'] );
     return $actions;
 }
 add_filter('post_row_actions','peta_multistep_remove_inline_edit', 10, 2);
+
+add_action('admin_footer', function () {
+    $screen = get_current_screen();
+    
+    if ($screen && $screen->post_type === 'peta_multistep') {
+        copy_to_clipboard_js();
+    }
+});
